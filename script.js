@@ -2,6 +2,15 @@
 
 const projects = [
   {
+    id: "terminal-chat",
+    title: "Terminal Chat System",
+    description: "A secure, real-time communication platform styled like a hacker's terminal. Features include Matrix mode, Admin commands, encrypted login, and live typing indicators.",
+    image: "/images/terminal-chat.png", // You need to take a screenshot!
+    tags: ["Node.js", "Socket.io", "Express", "Cybersecurity"],
+    source_code: "https://github.com/aftab-exr/terminal-chat",
+    demo_link: "https://chatapp-a5a2.onrender.com/",
+  },
+  {
     title: "Job Data Dashboard",
     tech: "Excel · Tableau",
     description:
@@ -15,7 +24,7 @@ const projects = [
     description:
       "Responsive personal portfolio website designed for quick scanning by recruiters, with clear call-to-actions and section hierarchy.",
     tag: "Frontend",
-    link: "#",
+    link: "https://aftab-exr.vercel.app/",
   },
   {
     title: "Data Cleaning Automation",

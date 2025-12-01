@@ -6,7 +6,7 @@ const projects = [
     title: "Terminal Chat System",
     description: "A secure, real-time communication platform styled like a hacker's terminal. Features include Matrix mode, Admin commands, encrypted login, and live typing indicators.",
     image: "/images/terminal-chat.png", // You need to take a screenshot!
-    tags: ["Node.js", "Socket.io", "Express", "Cybersecurity"],
+    tags: "Full Stack",
     source_code: "https://github.com/aftab-exr/terminal-chat",
     demo_link: "https://chatapp-a5a2.onrender.com/",
   },

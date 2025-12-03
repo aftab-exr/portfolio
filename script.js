@@ -7,7 +7,7 @@ const projects = [
     description: "A secure, real-time communication platform styled like a hacker's terminal. Features include Matrix mode, Admin commands, encrypted login, and live typing indicators.",
     image: "/images/terminal-chat.png", // You need to take a screenshot!
     tag: "Full Stack",
-    link: "https://chatapp-a5a2.onrender.com/",
+    link: "https://chatapp-d5cz.onrender.com/",
   },
   {
     title: "Job Data Dashboard",

@@ -2,6 +2,14 @@
 
 const projects = [
   {
+    title: "Terminal Chat System",
+    tech: "Node.js · Socket.io · Express.js · Cybersecurity",
+    description: "A secure, real-time communication platform styled like a hacker's terminal. Features include Matrix mode, Admin commands, encrypted login, and live typing indicators.",
+    image: "/images/terminal-chat.png", // You need to take a screenshot!
+    tag: "Full Stack",
+    link: "https://chatapp-d5cz.onrender.com/",
+  },
+  {
     title: "Job Data Dashboard",
     tech: "Excel · Tableau",
     description:
@@ -15,7 +23,7 @@ const projects = [
     description:
       "Responsive personal portfolio website designed for quick scanning by recruiters, with clear call-to-actions and section hierarchy.",
     tag: "Frontend",
-    link: "#",
+    link: "https://aftab-exr.vercel.app/",
   },
   {
     title: "Data Cleaning Automation",

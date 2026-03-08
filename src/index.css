@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #000000;
+  --bg-gradient-start: #18181b; /* zinc-900 */
+  --bg-gradient-mid: #000000;
+  --bg-gradient-end: #000000;
+
+  --text-primary: #e5e7eb; /* gray-200 */
+  --text-secondary: #9ca3af; /* gray-400 */
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+  --glass-shadow-hover: rgba(255, 255, 255, 0.05);
+
+  --gradient-text-start: #e5e7eb;
+  --gradient-text-end: #6b7280;
+}
+
+[data-theme='light'] {
+  --bg-color: #f8fafc; /* slate-50 */
+  --bg-gradient-start: #f1f5f9; /* slate-100 */
+  --bg-gradient-mid: #f8fafc;
+  --bg-gradient-end: #ffffff;
+
+  --text-primary: #1e293b; /* slate-800 */
+  --text-secondary: #475569; /* slate-600 */
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.05);
+  --glass-shadow-hover: rgba(0, 0, 0, 0.1);
+
+  --gradient-text-start: #334155;
+  --gradient-text-end: #94a3b8;
+}
+
+[data-theme='blue'] {
+  --bg-color: #0f172a; /* slate-900 */
+  --bg-gradient-start: #1e3a8a; /* blue-900 */
+  --bg-gradient-mid: #0f172a;
+  --bg-gradient-end: #020617;
+
+  --text-primary: #f8fafc; /* slate-50 */
+  --text-secondary: #93c5fd; /* blue-300 */
+
+  --glass-bg: rgba(59, 130, 246, 0.1); /* blue-500/10 */
+  --glass-border: rgba(96, 165, 250, 0.2); /* blue-400/20 */
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+  --glass-shadow-hover: rgba(59, 130, 246, 0.2);
+
+  --gradient-text-start: #60a5fa; /* blue-400 */
+  --gradient-text-end: #a78bfa; /* purple-400 */
+}
+
+[data-theme='red'] {
+  --bg-color: #270404; /* Very dark red */
+  --bg-gradient-start: #7f1d1d; /* red-900 */
+  --bg-gradient-mid: #450a0a; /* red-950 */
+  --bg-gradient-end: #000000;
+
+  --text-primary: #fef2f2; /* red-50 */
+  --text-secondary: #fca5a5; /* red-300 */
+
+  --glass-bg: rgba(239, 68, 68, 0.1); /* red-500/10 */
+  --glass-border: rgba(248, 113, 113, 0.2); /* red-400/20 */
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+  --glass-shadow-hover: rgba(239, 68, 68, 0.2);
+
+  --gradient-text-start: #f87171; /* red-400 */
+  --gradient-text-end: #fb923c; /* orange-400 */
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    @apply antialiased overflow-x-hidden transition-colors duration-500;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+    @apply backdrop-blur-lg border transition-colors duration-500;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 8px 32px 0 var(--glass-shadow-hover);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      to right,
+      var(--gradient-text-start),
+      var(--gradient-text-end)
+    );
+    @apply bg-clip-text text-transparent transition-colors duration-500;
+  }
+}

@@ -62,58 +62,6 @@ const Frontend = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Project 1 */}
-          <GlassCard className="flex flex-col">
-            <div className="h-48 bg-black/50 rounded-xl mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden group">
-              <span className="text-gray-500 font-medium group-hover:scale-110 transition-transform">
-                Project UI Screenshot
-              </span>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-200 mb-3">Finance Dashboard SPA</h3>
-            <p className="text-gray-400 mb-6 flex-grow">
-              A comprehensive React application serving as a personal finance dashboard. Features
-              real-time data visualization using Chart.js, dark/light mode toggling, and fully
-              responsive layouts built with Tailwind CSS.
-            </p>
-            <div className="flex gap-3 flex-wrap">
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                React
-              </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                Tailwind CSS
-              </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                Chart.js
-              </span>
-            </div>
-          </GlassCard>
-
-          {/* Project 2 */}
-          <GlassCard className="flex flex-col">
-            <div className="h-48 bg-black/50 rounded-xl mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden group">
-              <span className="text-gray-500 font-medium group-hover:scale-110 transition-transform">
-                Project UI Screenshot
-              </span>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-200 mb-3">Task Management Tool</h3>
-            <p className="text-gray-400 mb-6 flex-grow">
-              A Kanban-style task management web app with drag-and-drop functionality. State is
-              managed entirely complex custom React Hooks, demonstrating deep understanding of the
-              React lifecycle and component architecture.
-            </p>
-            <div className="flex gap-3 flex-wrap">
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                React Context API
-              </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                Framer Motion
-              </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                Vite
-              </span>
-            </div>
-          </GlassCard>
-
           {/* Project 3 */}
           <GlassCard className="flex flex-col">
             <a

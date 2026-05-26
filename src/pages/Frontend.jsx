@@ -113,6 +113,37 @@ const Frontend = () => {
               </span>
             </div>
           </GlassCard>
+
+          {/* Project 3 */}
+          <GlassCard className="flex flex-col">
+            <a
+              href="https://task-cmd.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="h-48 bg-black/50 rounded-xl mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden group"
+            >
+              <span className="text-gray-500 font-medium group-hover:scale-110 transition-transform">
+                Task CMD Live Demo
+              </span>
+            </a>
+            <h3 className="text-2xl font-bold text-gray-200 mb-3">Task CMD</h3>
+            <p className="text-gray-400 mb-6 flex-grow">
+              A modern task management workspace with a three-lane Kanban board for Pending,
+              In Progress, and Done. Create tasks with titles, descriptions, and priority levels,
+              then drag cards across stages to track progress.
+            </p>
+            <div className="flex gap-3 flex-wrap">
+              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
+                Kanban Board
+              </span>
+              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
+                Drag & Drop
+              </span>
+              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
+                Authentication
+              </span>
+            </div>
+          </GlassCard>
         </div>
       </section>
     </div>

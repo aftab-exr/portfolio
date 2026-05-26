@@ -76,19 +76,19 @@ const Frontend = () => {
             </a>
             <h3 className="text-2xl font-bold text-gray-200 mb-3">Task CMD</h3>
             <p className="text-gray-400 mb-6 flex-grow">
-              A modern task management workspace with a three-lane Kanban board for Pending,
-              In Progress, and Done. Create tasks with titles, descriptions, and priority levels,
-              then drag cards across stages to track progress.
+              An intelligent IT task management workspace built around a three-lane Kanban board
+              for Pending, In Progress, and Done. The app includes AI-assisted task creation,
+              smart priority suggestions, and automated workflow recommendations for IT teams.
             </p>
             <div className="flex gap-3 flex-wrap">
+              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
+                AI Integration
+              </span>
               <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
                 Kanban Board
               </span>
               <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                Drag & Drop
-              </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                Authentication
+                Task Prioritization
               </span>
             </div>
           </GlassCard>

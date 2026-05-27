@@ -22,22 +22,58 @@
   --gradient-text-end: #6b7280;
 }
 
-[data-theme='light'] {
-  --bg-color: #f8fafc; /* slate-50 */
-  --bg-gradient-start: #f1f5f9; /* slate-100 */
-  --bg-gradient-mid: #f8fafc;
-  --bg-gradient-end: #ffffff;
+[data-theme='cyan'] {
+  --bg-color: #000f1a; /* Deep cyan-dark */
+  --bg-gradient-start: #0f4c75; /* Cyan-950 */
+  --bg-gradient-mid: #001429;
+  --bg-gradient-end: #000000;
 
-  --text-primary: #1e293b; /* slate-800 */
-  --text-secondary: #475569; /* slate-600 */
+  --text-primary: #cffafe; /* cyan-100 */
+  --text-secondary: #67e8f9; /* cyan-300 */
 
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --glass-shadow: rgba(0, 0, 0, 0.05);
-  --glass-shadow-hover: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(34, 211, 238, 0.08); /* cyan-400/8 */
+  --glass-border: rgba(34, 211, 238, 0.15); /* cyan-400/15 */
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+  --glass-shadow-hover: rgba(34, 211, 238, 0.15);
 
-  --gradient-text-start: #334155;
-  --gradient-text-end: #94a3b8;
+  --gradient-text-start: #22d3ee; /* cyan-400 */
+  --gradient-text-end: #06b6d4; /* cyan-500 */
+}
+
+[data-theme='purple'] {
+  --bg-color: #11051e; /* Deep purple */
+  --bg-gradient-start: #581c87; /* purple-950 */
+  --bg-gradient-mid: #2d1b4e;
+  --bg-gradient-end: #000000;
+
+  --text-primary: #f3e8ff; /* purple-100 */
+  --text-secondary: #d8b4fe; /* purple-300 */
+
+  --glass-bg: rgba(168, 85, 247, 0.08); /* purple-500/8 */
+  --glass-border: rgba(168, 85, 247, 0.15); /* purple-500/15 */
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+  --glass-shadow-hover: rgba(168, 85, 247, 0.15);
+
+  --gradient-text-start: #d8b4fe; /* purple-300 */
+  --gradient-text-end: #a78bfa; /* purple-400 */
+}
+
+[data-theme='emerald'] {
+  --bg-color: #051618; /* Deep emerald */
+  --bg-gradient-start: #064e3b; /* emerald-950 */
+  --bg-gradient-mid: #0d3b2f;
+  --bg-gradient-end: #000000;
+
+  --text-primary: #d1fae5; /* emerald-100 */
+  --text-secondary: #6ee7b7; /* emerald-400 */
+
+  --glass-bg: rgba(52, 211, 153, 0.08); /* emerald-400/8 */
+  --glass-border: rgba(52, 211, 153, 0.15); /* emerald-400/15 */
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+  --glass-shadow-hover: rgba(52, 211, 153, 0.15);
+
+  --gradient-text-start: #6ee7b7; /* emerald-400 */
+  --gradient-text-end: #34d399; /* emerald-500 */
 }
 
 [data-theme='blue'] {

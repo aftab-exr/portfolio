@@ -62,12 +62,12 @@ const Frontend = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Project 3 */}
+          {/* Project 1 */}
           <GlassCard className="flex flex-col">
             <a
               href="https://task-cmd.vercel.app/"
               target="_blank"
-              rel="noreferrer"
+              rel="nooperner noreferrer"
               className="h-48 bg-black/50 rounded-xl mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden group"
             >
               <span className="text-gray-500 font-medium group-hover:scale-110 transition-transform">

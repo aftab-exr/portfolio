@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home as HomeIcon, User, Briefcase, Code, Mail, Share2, Palette } from 'lucide-react';
+import { Home as HomeIcon, User, Layout, Database, Brain, Mail, Share2, Palette } from 'lucide-react';
 import { ThemeContext } from '../ThemeContext';
 
 const Navbar = () => {
@@ -21,7 +21,9 @@ const Navbar = () => {
 
   const themes = [
     { id: 'dark', name: 'Dark', color: '#18181b' },
-    { id: 'light', name: 'Light', color: '#f8fafc' },
+    { id: 'cyan', name: 'Cyan', color: '#22d3ee' },
+    { id: 'purple', name: 'Purple', color: '#d8b4fe' },
+    { id: 'emerald', name: 'Emerald', color: '#6ee7b7' },
     { id: 'blue', name: 'Blue', color: '#1e3a8a' },
     { id: 'red', name: 'Red', color: '#7f1d1d' },
   ];
@@ -40,6 +42,7 @@ const Navbar = () => {
         <div className="flex gap-2 md:gap-4 items-center flex-wrap justify-center flex-1 mx-4">
           <NavLink
             to="/"
+            title="Home"
             end
             className={({ isActive }) =>
               `flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 font-medium ${isActive ? 'glass text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`
@@ -60,23 +63,33 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/frontend" // Serving as projects/frontend page for now
+            to="/frontend"
             className={({ isActive }) =>
               `flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 font-medium ${isActive ? 'glass text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`
             }
           >
-            <Briefcase size={16} />
-            <span className="hidden lg:inline text-sm">Project</span>
+            <Layout size={16} />
+            <span className="hidden lg:inline text-sm">Frontend</span>
           </NavLink>
 
           <NavLink
-            to="/data-analyst" // Serving as a skill/role page
+            to="/data-analyst"
             className={({ isActive }) =>
               `flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 font-medium ${isActive ? 'glass text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`
             }
           >
-            <Code size={16} />
-            <span className="hidden lg:inline text-sm">Skill</span>
+            <Database size={16} />
+            <span className="hidden lg:inline text-sm">Data Analyst</span>
+          </NavLink>
+
+          <NavLink
+            to="/ai-engineer"
+            className={({ isActive }) =>
+              `flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 font-medium ${isActive ? 'glass text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`
+            }
+          >
+            <Brain size={16} />
+            <span className="hidden lg:inline text-sm">AI Engineer</span>
           </NavLink>
 
           <NavLink

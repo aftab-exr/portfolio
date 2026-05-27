@@ -27,7 +27,7 @@ const About = () => {
 
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-2">Aaftab</h2>
             <h3 className="text-md font-medium text-blue-400 mb-6 uppercase tracking-wider">
-              Frontend Dev & Data Analyst
+              Full-Stack Dev & Data Analyst
             </h3>
 
             <div className="w-full space-y-4 text-left">
@@ -56,9 +56,9 @@ const About = () => {
             <div className="space-y-4 text-[var(--text-primary)] opacity-90 leading-relaxed">
               <p>
                 Hello! I'm Aaftab, a hybrid professional blending the logical rigor of data analysis
-                with the creative possibilities of frontend development. I specialize in
+                with the creative possibilities of full-stack web development. I specialize in
                 transforming raw, unstructured data into compelling visual stories and building
-                intuitive web interfaces that people love to use.
+                intuitive applications that people love to use.
               </p>
               <p>
                 My journey started with a fascination for numbers and patterns, which naturally

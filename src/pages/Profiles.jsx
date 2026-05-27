@@ -64,7 +64,7 @@ const Profiles = () => {
       color: 'bg-[var(--text-primary)]/5 border-[var(--glass-border)]',
       description:
         githubData?.bio ||
-        'Check out my open-source projects, contributions, and frontend web development repositories.',
+        'Check out my open-source projects, contributions, and web development repositories.',
       link: githubData?.html_url || `https://github.com/${GITHUB_USERNAME}`,
       stats: loadingGithub
         ? ['Loading Live Data...']

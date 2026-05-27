@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Profiles from './pages/Profiles';
-import Frontend from './pages/Frontend';
+import WebDevelopment from './pages/Frontend';
 import DataAnalyst from './pages/DataAnalyst';
 import AIEngineer from './pages/AIEngineer';
 import Contact from './pages/Contact';
@@ -32,7 +32,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/profiles" element={<Profiles />} />
-              <Route path="/frontend" element={<Frontend />} />
+              <Route path="/web-development" element={<WebDevelopment />} />
               <Route path="/data-analyst" element={<DataAnalyst />} />
               <Route path="/ai-engineer" element={<AIEngineer />} />
               <Route path="/contact" element={<Contact />} />

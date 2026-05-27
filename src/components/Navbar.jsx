@@ -63,13 +63,13 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/frontend"
+            to="/web-development"
             className={({ isActive }) =>
               `flex items-center gap-2 px-3 py-2 rounded-full transition-all duration-300 font-medium ${isActive ? 'glass text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`
             }
           >
             <Layout size={16} />
-            <span className="hidden lg:inline text-sm">Frontend</span>
+            <span className="hidden lg:inline text-sm">Web Dev</span>
           </NavLink>
 
           <NavLink

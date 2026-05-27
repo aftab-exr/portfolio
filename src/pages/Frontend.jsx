@@ -1,56 +1,57 @@
 import React from 'react';
 import GlassCard from '../components/GlassCard';
-import { Layout, Smartphone, Code2, Zap } from 'lucide-react';
+import { Layout, Database, Code2, Server, Zap } from 'lucide-react';
 
-const Frontend = () => {
+const WebDevelopment = () => {
   return (
     <div className="pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto min-h-screen">
       <section className="text-center mb-20 animate-fade-in-up">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white flex items-center justify-center gap-4">
-          <Layout size={48} className="text-gray-300" /> Frontend Development
+          <Layout size={48} className="text-gray-300" /> Web Development
         </h1>
         <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          I build fast, responsive, and accessible web applications. Focusing on intuitive user
-          interfaces and a seamless user experience, I bring wireframes to life.
+          I build end-to-end MERN applications with AI-enhanced features. From React user
+          interfaces to Express APIs, MongoDB databases, and lightweight AI automation,
+          I deliver full-stack solutions that scale.
         </p>
       </section>
 
       <section className="mb-24 animate-fade-in-up animation-delay-300">
-        <h2 className="text-3xl font-bold mb-8 text-white text-center">Technical Arsenal</h2>
+        <h2 className="text-3xl font-bold mb-8 text-white text-center">Full-Stack Arsenal</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <GlassCard className="text-center hover:-translate-y-2 transition-transform">
             <Code2 className="mx-auto mb-4 text-gray-300" size={40} />
-            <h3 className="text-xl font-bold text-gray-200 mb-2">Modern Frameworks</h3>
+            <h3 className="text-xl font-bold text-gray-200 mb-2">MERN Architecture</h3>
             <p className="text-sm text-gray-400">
-              Extensive experience building SPAs with React.js, utilizing Hooks, Context, and state
-              management.
+              Building scalable React frontends with Node.js and Express backends, backed by
+              MongoDB for fast, flexible data storage.
             </p>
           </GlassCard>
 
           <GlassCard className="text-center hover:-translate-y-2 transition-transform">
-            <Layout className="mx-auto mb-4 text-gray-300" size={40} />
-            <h3 className="text-xl font-bold text-gray-200 mb-2">Styling & UI</h3>
+            <Server className="mx-auto mb-4 text-gray-300" size={40} />
+            <h3 className="text-xl font-bold text-gray-200 mb-2">API & Cloud Integration</h3>
             <p className="text-sm text-gray-400">
-              Crafting pixel-perfect designs using Tailwind CSS, CSS Modules, Styled Components, and
-              Framer Motion.
+              Designing RESTful APIs, integrating third-party services, and deploying apps to
+              cloud environments for real-world production readiness.
             </p>
           </GlassCard>
 
           <GlassCard className="text-center hover:-translate-y-2 transition-transform">
-            <Smartphone className="mx-auto mb-4 text-gray-300" size={40} />
-            <h3 className="text-xl font-bold text-gray-200 mb-2">Responsive Design</h3>
+            <Database className="mx-auto mb-4 text-gray-300" size={40} />
+            <h3 className="text-xl font-bold text-gray-200 mb-2">Data & Database Design</h3>
             <p className="text-sm text-gray-400">
-              Ensuring fluid layouts that work flawlessly across desktop, tablet, and mobile devices
-              natively.
+              Modeling resilient MongoDB schemas, optimizing queries, and structuring data for
+              fast app performance across devices.
             </p>
           </GlassCard>
 
           <GlassCard className="text-center hover:-translate-y-2 transition-transform">
             <Zap className="mx-auto mb-4 text-gray-300" size={40} />
-            <h3 className="text-xl font-bold text-gray-200 mb-2">Performance Optimization</h3>
+            <h3 className="text-xl font-bold text-gray-200 mb-2">AI-Enabled Workflows</h3>
             <p className="text-sm text-gray-400">
-              Implementing lazy loading, code splitting, and asset optimization for instantaneous
-              load times.
+              Adding AI-powered features like smart suggestions, task automation, and contextual
+              workflow enhancements to improve user productivity.
             </p>
           </GlassCard>
         </div>
@@ -81,26 +82,28 @@ const Frontend = () => {
             </a>
             <h3 className="text-2xl font-bold text-gray-200 mb-2">Task CMD</h3>
             <p className="text-sm text-gray-400 mb-2">
-              Engineering Workspace - AI-Powered Task Management
+              Full-Stack MERN Project with AI-assisted task workflows
             </p>
             <p className="text-gray-400 mb-6 flex-grow">
-              An intelligent IT task management workspace built around a three-lane Kanban board
-              for Pending, In Progress, and Done. Features AI-assisted task creation, smart priority
-              suggestions, and automated workflow recommendations. Built with React, Tailwind CSS,
-              and modern drag-and-drop functionality.
+              A complete web application featuring a React frontend, Express API backend, and
+              MongoDB data layer. Includes AI-powered task prioritization, smart workflow
+              recommendations, and a three-lane Kanban board for streamlined team delivery.
             </p>
             <div className="flex gap-3 flex-wrap">
               <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
                 React
               </span>
               <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
-                Tailwind CSS
+                Node.js
               </span>
               <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
-                Kanban Board
+                Express
               </span>
               <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
-                Drag & Drop
+                MongoDB
+              </span>
+              <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
+                AI Integration
               </span>
             </div>
           </GlassCard>
@@ -110,4 +113,4 @@ const Frontend = () => {
   );
 };
 
-export default Frontend;
+export default WebDevelopment;

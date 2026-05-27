@@ -24,19 +24,19 @@ const Home = () => {
           I bridge the gap between complex data and beautiful, intuitive user experiences.
           <br className="hidden md:block" />
           <span className="font-semibold text-gray-200">Data Analyst</span> &{' '}
-          <span className="font-semibold text-gray-200">Frontend Web Developer</span>.
+          <span className="font-semibold text-gray-200">Full-Stack Web Developer</span>.
         </p>
       </section>
 
       {/* Skills Section */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
-        {/* Frontend Skills */}
+        {/* Web Development Skills */}
         <GlassCard className="relative overflow-hidden group">
           <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
             <Layout size={100} className="text-white" />
           </div>
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 text-white">
-            <Palette /> Frontend Development
+            <Palette /> Web Development
           </h2>
           <p className="text-gray-400 mb-6 relative z-10 text-sm">
             Crafting pixel-perfect, responsive web interfaces with a strong focus on UI/UX and
@@ -111,8 +111,8 @@ const Home = () => {
         <h2 className="text-3xl font-bold mb-10 text-white text-center">Featured Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Highlight 1 - Link to Frontend */}
-          <Link to="/frontend" className="block group">
+          {/* Highlight 1 - Link to Web Development */}
+          <Link to="/web-development" className="block group">
             <GlassCard className="h-full flex flex-col group-hover:-translate-y-2 transition-transform duration-300 cursor-pointer p-0 overflow-hidden">
               <div className="h-48 bg-white/5 flex items-center justify-center border-b border-white/10">
                 <Layout
@@ -123,15 +123,15 @@ const Home = () => {
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-200 mb-2 flex justify-between items-center">
-                    Frontend Showcases{' '}
+                    Web Development Showcases{' '}
                     <ArrowRight
                       className="opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all text-white"
                       size={20}
                     />
                   </h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    View my complete portfolio of web applications, featuring React SPAs, dynamic
-                    interfaces, and custom visual designs.
+                    View my complete portfolio of full-stack MERN applications, dynamic APIs,
+                    and AI-enhanced web experiences.
                   </p>
                 </div>
               </div>

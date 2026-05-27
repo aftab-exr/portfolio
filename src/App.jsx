@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Profiles from './pages/Profiles';
-import WebDevelopment from './pages/Frontend';
+import WebDevelopment from './pages/WebDevelopment';
 import DataAnalyst from './pages/DataAnalyst';
 import AIEngineer from './pages/AIEngineer';
 import Contact from './pages/Contact';

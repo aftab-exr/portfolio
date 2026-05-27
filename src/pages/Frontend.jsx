@@ -63,32 +63,44 @@ const Frontend = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Project 1 */}
-          <GlassCard className="flex flex-col">
+          <GlassCard className="flex flex-col overflow-hidden">
             <a
               href="https://task-cmd.vercel.app/"
               target="_blank"
               rel="nooperner noreferrer"
-              className="h-48 bg-black/50 rounded-xl mb-6 flex items-center justify-center border border-white/5 relative overflow-hidden group"
+              className="h-56 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden group"
             >
-              <span className="text-gray-500 font-medium group-hover:scale-110 transition-transform">
-                Task CMD Live Demo
-              </span>
+              <img
+                src="/Screenshots/Project-F1.png"
+                alt="Task CMD Engineering Workspace"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 brightness-90 group-hover:brightness-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white font-bold text-lg">View Live Demo →</span>
+              </div>
             </a>
-            <h3 className="text-2xl font-bold text-gray-200 mb-3">Task CMD</h3>
+            <h3 className="text-2xl font-bold text-gray-200 mb-2">Task CMD</h3>
+            <p className="text-sm text-gray-400 mb-2">
+              Engineering Workspace - AI-Powered Task Management
+            </p>
             <p className="text-gray-400 mb-6 flex-grow">
               An intelligent IT task management workspace built around a three-lane Kanban board
-              for Pending, In Progress, and Done. The app includes AI-assisted task creation,
-              smart priority suggestions, and automated workflow recommendations for IT teams.
+              for Pending, In Progress, and Done. Features AI-assisted task creation, smart priority
+              suggestions, and automated workflow recommendations. Built with React, Tailwind CSS,
+              and modern drag-and-drop functionality.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                AI Integration
+              <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
+                React
               </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
+              <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
+                Tailwind CSS
+              </span>
+              <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
                 Kanban Board
               </span>
-              <span className="px-3 py-1 text-xs font-semibold bg-white/10 text-gray-300 rounded-full">
-                Task Prioritization
+              <span className="px-3 py-1 text-xs font-semibold bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/40">
+                Drag & Drop
               </span>
             </div>
           </GlassCard>

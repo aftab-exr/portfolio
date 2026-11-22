@@ -1,0 +1,11 @@
+import LiveSiteFrame from "@/components/LiveSiteFrame";
+import { PortfolioClient } from "@/components/PortfolioClient";
+import { fetchPortfolioSnapshot } from "@/lib/api";
+
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const { profile, projects, assets } = await fetchPortfolioSnapshot();
+
+  return <PortfolioClient profile={profile} projects={projects} assets={assets} />;
+}

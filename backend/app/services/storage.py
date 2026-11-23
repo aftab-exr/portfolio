@@ -2,6 +2,7 @@ import mimetypes
 import os
 import uuid
 from pathlib import Path
+from urllib.parse import urlparse
 import fitz
 import httpx
 from fastapi import HTTPException, UploadFile, status
@@ -10,8 +11,20 @@ from app.config import settings
 ALLOWED_IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp"}
 
 
+def _normalized_supabase_base() -> str:
+    raw = settings.supabase_url.strip()
+    if not raw:
+        return ""
+    if not raw.startswith(("http://", "https://")):
+        raw = f"https://{raw}"
+    parsed = urlparse(raw)
+    if parsed.scheme and parsed.netloc:
+        return f"{parsed.scheme}://{parsed.netloc}"
+    return raw.rstrip("/")
+
+
 def _use_supabase() -> bool:
-    return bool(settings.supabase_url.strip() and settings.supabase_service_role_key.strip())
+    return bool(_normalized_supabase_base() and settings.supabase_service_role_key.strip())
 
 
 def _supabase_headers(content_type: str) -> dict[str, str]:
@@ -25,23 +38,29 @@ def _supabase_headers(content_type: str) -> dict[str, str]:
 
 
 def _supabase_public_url(object_path: str) -> str:
-    base = settings.supabase_url.strip().rstrip("/")
+    base = _normalized_supabase_base()
     bucket = settings.supabase_bucket.strip()
     return f"{base}/storage/v1/object/public/{bucket}/{object_path}"
 
 
 async def _upload_to_supabase(object_path: str, content: bytes, content_type: str) -> str:
-    base = settings.supabase_url.strip().rstrip("/")
+    base = _normalized_supabase_base()
     bucket = settings.supabase_bucket.strip()
     upload_url = f"{base}/storage/v1/object/{bucket}/{object_path}"
 
-    async with httpx.AsyncClient(timeout=60.0) as client:
-        res = await client.post(upload_url, content=content, headers=_supabase_headers(content_type))
+    try:
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            res = await client.post(upload_url, content=content, headers=_supabase_headers(content_type))
+    except httpx.HTTPError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail=f"Supabase Storage connection error ({type(exc).__name__}) for URL '{base}': {exc}",
+        ) from exc
 
     if res.status_code not in (200, 201):
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
-            detail=f"Supabase Storage upload failed ({res.status_code}): {res.text}",
+            detail=f"Supabase Storage upload failed ({res.status_code}) on bucket '{bucket}': {res.text}",
         )
 
     return _supabase_public_url(object_path)
@@ -123,7 +142,7 @@ def delete_upload_if_exists(public_or_abs_path: str) -> None:
         marker = f"/storage/v1/object/public/{bucket}/"
         if marker in public_or_abs_path:
             object_path = public_or_abs_path.split(marker, 1)[1]
-            base = settings.supabase_url.strip().rstrip("/")
+            base = _normalized_supabase_base()
             del_url = f"{base}/storage/v1/object/{bucket}/{object_path}"
             try:
                 httpx.delete(del_url, headers=_supabase_headers("application/json"), timeout=15.0)

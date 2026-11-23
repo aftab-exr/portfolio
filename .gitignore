@@ -8,5 +8,4 @@ backend/.env
 web/.env.local
 mobile/.env
 backend/uploads/*
-!backend/uploads/.gitkeep
 *.apk

@@ -8,6 +8,9 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
     upload_dir: str = "/app/uploads"
     cors_origins: str = "*"
+    supabase_url: str = ""
+    supabase_service_role_key: str = ""
+    supabase_bucket: str = "portfolio-assets"
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

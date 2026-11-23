@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import List
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from sqlalchemy.orm import Session
 from app.auth import verify_owner
 from app.database import get_db
@@ -12,9 +12,17 @@ from app.services.storage import extract_pdf_text, save_binary_asset
 router = APIRouter(prefix="/api/assets", tags=["Assets"])
 
 
+def _asset_exists(stored_path: str) -> bool:
+    if not stored_path:
+        return False
+    if stored_path.startswith(("http://", "https://")):
+        return True
+    return Path(stored_path).exists()
+
+
 def _build_status(db: Session, asset_type: str) -> AssetStatusOut:
     record = db.query(AssetRecord).filter(AssetRecord.asset_type == asset_type).first()
-    if not record or not Path(record.stored_path).exists():
+    if not record or not _asset_exists(record.stored_path):
         return AssetStatusOut(asset_type=asset_type, available=False)
 
     return AssetStatusOut(
@@ -71,8 +79,11 @@ async def upload_resume(
 @router.get("/resume/latest")
 def download_latest_resume(db: Session = Depends(get_db)):
     record = db.query(AssetRecord).filter(AssetRecord.asset_type == "resume").first()
-    if not record or not Path(record.stored_path).exists():
+    if not record or not _asset_exists(record.stored_path):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Resume not uploaded yet")
+
+    if record.stored_path.startswith(("http://", "https://")):
+        return RedirectResponse(url=record.stored_path, status_code=status.HTTP_307_TEMPORARY_REDIRECT)
 
     return FileResponse(
         path=record.stored_path,
@@ -116,8 +127,11 @@ async def upload_apk(
 @router.get("/apk/latest")
 def download_latest_apk(db: Session = Depends(get_db)):
     record = db.query(AssetRecord).filter(AssetRecord.asset_type == "apk").first()
-    if not record or not Path(record.stored_path).exists():
+    if not record or not _asset_exists(record.stored_path):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="APK release not uploaded yet")
+
+    if record.stored_path.startswith(("http://", "https://")):
+        return RedirectResponse(url=record.stored_path, status_code=status.HTTP_307_TEMPORARY_REDIRECT)
 
     return FileResponse(
         path=record.stored_path,

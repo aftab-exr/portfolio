@@ -138,3 +138,36 @@ def download_latest_apk(db: Session = Depends(get_db)):
         media_type="application/vnd.android.package-archive",
         filename=record.original_filename or "Portfolio.apk",
     )
+
+
+@router.post("/apk-url", response_model=AssetStatusOut, dependencies=[Depends(verify_owner)])
+def register_external_apk_url(
+    apk_url: str = Form(...),
+    version_label: str = Form("v1.0.0"),
+    original_filename: str = Form("portfolio.apk"),
+    file_size_bytes: int = Form(0),
+    db: Session = Depends(get_db),
+):
+    clean_url = apk_url.strip()
+    if not clean_url.startswith(("http://", "https://")):
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="apk_url must be a valid HTTP/HTTPS URL")
+
+    record = db.query(AssetRecord).filter(AssetRecord.asset_type == "apk").first()
+    if not record:
+        record = AssetRecord(
+            asset_type="apk",
+            original_filename=original_filename,
+            stored_path=clean_url,
+            file_size_bytes=file_size_bytes,
+            version_label=version_label,
+        )
+        db.add(record)
+    else:
+        record.original_filename = original_filename
+        record.stored_path = clean_url
+        record.file_size_bytes = file_size_bytes
+        record.version_label = version_label
+
+    db.commit()
+    db.refresh(record)
+    return _build_status(db, "apk")
